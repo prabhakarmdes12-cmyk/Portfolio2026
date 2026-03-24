@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prabhakar Kumar — Resume</title>
+  <meta name="description" content="Resume of Prabhakar Kumar, Senior Product Designer with 9+ years of experience">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>(function () { var t = localStorage.getItem('portfolio-theme') || 'dark'; document.documentElement.setAttribute('data-theme', t); })();</script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root,
+    [data-theme="dark"] {
+      --bg: #0a0a0a;
+      --bg-secondary: #1a1a1a;
+      --bg-tertiary: #242424;
+      --text: #e8e2d4;
+      --text-secondary: #b8b0a0;
+      --text-tertiary: #8a8280;
+      --accent: #c8923a;
+      --accent-light: #d9a84a;
+      --accent-dark: #a67c2a;
+      --border: rgba(200, 146, 58, 0.15);
+      --border-light: rgba(200, 146, 58, 0.08);
+    }
+
+    [data-theme="light"] {
+      --bg: #fafaf8;
+      --bg-secondary: #f3f1ed;
+      --bg-tertiary: #ede8e0;
+      --text: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-tertiary: #8a8a8a;
+      --accent: #a67c2a;
+      --accent-light: #c8923a;
+      --accent-dark: #8b6914;
+      --border: rgba(166, 124, 42, 0.15);
+      --border-light: rgba(166, 124, 42, 0.08);
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      padding: 0;
+      transition: background 0.4s ease, color 0.4s ease;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Subtle background pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(200, 146, 58, 0.03) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(200, 146, 58, 0.02) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .resume-container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      padding: 60px 40px;
+      background: linear-gradient(to bottom, 
+        var(--bg) 0%, 
+        var(--bg-secondary) 50%, 
+        var(--bg) 100%);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      margin: 60px auto;
+    }
+
+    .header-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .back-link:hover {
+      transform: translateX(-4px);
+      color: var(--accent-light);
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      color: var(--bg);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      box-shadow: 0 4px 15px rgba(200, 146, 58, 0.3);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(200, 146, 58, 0.4);
+    }
+
+    .download-btn:active {
+      transform: translateY(0);
+    }
+
+    .download-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .typewriter-container {
+      position: relative;
+      min-height: 100px;
+      opacity: 0;
+      animation: pageReveal 0.8s ease-out 0.2s forwards;
+    }
+
+    @keyframes pageReveal {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .resume-content {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      line-height: 1.8;
+      color: var(--text);
+      background: var(--bg);
+      padding: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--border-light);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+    }
+
+    /* Syntax highlighting for resume sections */
+    .resume-content {
+      background-image: 
+        linear-gradient(90deg, transparent 0%, rgba(200, 146, 58, 0.02) 100%);
+    }
+
+    /* AI Cursor with enhanced glow effect */
+    .resume-content::after {
+      content: '▮';
+      animation: aiCursorBlink 0.3s infinite, aiCursorGlow 1.5s infinite;
+      margin-left: 3px;
+      color: var(--accent-light);
+      font-weight: bold;
+      filter: drop-shadow(0 0 2px var(--accent-light));
+    }
+
+    @keyframes aiCursorBlink {
+      0%, 49% {
+        opacity: 1;
+      }
+      50%, 100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes aiCursorGlow {
+      0%, 100% {
+        text-shadow: 0 0 6px var(--accent), 0 0 12px rgba(200, 146, 58, 0.4);
+        filter: drop-shadow(0 0 4px var(--accent));
+      }
+      50% {
+        text-shadow: 0 0 16px var(--accent), 0 0 28px rgba(200, 146, 58, 0.6);
+        filter: drop-shadow(0 0 8px var(--accent));
+      }
+    }
+
+    .resume-content.complete::after {
+      display: none;
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      background: var(--accent);
+      border: 2px solid var(--accent-light);
+      color: var(--bg);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 22px;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 200;
+      box-shadow: 0 8px 24px rgba(200, 146, 58, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.15) rotate(20deg);
+      box-shadow: 0 12px 32px rgba(200, 146, 58, 0.35);
+    }
+
+    .theme-toggle:active {
+      transform: scale(0.95);
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-light);
+    }
+
+    /* Responsive design */
+    @media (max-width: 1024px) {
+      .resume-container {
+        padding: 50px 30px;
+        margin: 40px 20px;
+        border-radius: 8px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 0;
+      }
+
+      .resume-container {
+        padding: 30px 20px;
+        margin: 30px 15px;
+        border-radius: 4px;
+      }
+
+      .header-controls {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .back-link,
+      .download-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .resume-content {
+        font-size: 11px;
+        padding: 25px;
+        letter-spacing: 0.2px;
+        line-height: 1.6;
+      }
+
+      .theme-toggle {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        top: 20px;
+        right: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .resume-content::after {
+        animation: none;
+        opacity: 1;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      body::before {
+        display: none;
+      }
+
+      .resume-container {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+        background: white;
+      }
+
+      .header-controls {
+        display: none;
+      }
+
+      .theme-toggle {
+        display: none;
+      }
+
+      .resume-content {
+        background: white;
+        color: #000;
+        border: none;
+        box-shadow: none;
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+  
+  <div class="resume-container">
+    <div class="header-controls">
+      <a href="javascript:window.opener.focus(); window.close();" class="back-link">← Back to Portfolio</a>
+      <button class="download-btn" id="downloadBtn">⬇ Download PDF</button>
+    </div>
+    
+    <div class="typewriter-container">
+      <div class="resume-content" id="resumeContent"></div>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle
+    (function() {
+      const STORAGE_KEY = 'portfolio-theme';
+      const getTheme = () => localStorage.getItem(STORAGE_KEY) || 'dark';
+      const setTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem(STORAGE_KEY, theme);
+        updateThemeToggle();
+      };
+      const updateThemeToggle = () => {
+        const btn = document.getElementById('themeToggle');
+        if (btn) {
+          btn.textContent = getTheme() === 'dark' ? '☀️' : '🌙';
+        }
+      };
+      const toggleTheme = () => {
+        const next = getTheme() === 'dark' ? 'light' : 'dark';
+        setTheme(next);
+      };
+      setTheme(getTheme());
+      document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('themeToggle');
+        if (btn) btn.addEventListener('click', toggleTheme);
+        updateThemeToggle();
+      });
+    })();
+
+    // Typewriter effect - HIGH SPEED AI STYLE
+    const resumeText = `PRABHAKAR KUMAR
+Senior Product Designer | 9+ Years Experience
+India | +91 99729 34937 | prabhakarmdes12@gmail.com
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROFILE SUMMARY
+Visionary Product Designer specializing in human-centered service design, 
+design systems, and end-to-end digital transformation. Expert in journey 
+mapping, interaction design, and multi-platform ecosystem strategy.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CORE COMPETENCIES
+Service Design     │  Journey Mapping, Blueprinting, Ecosystem Design
+UX Strategy        │  Information Architecture, Wireframing, Prototyping
+Research Methods   │  User Research, Synthesis, Problem Framing
+Design Systems     │  Component Governance, UI Patterns, Documentation
+Digital Tools      │  Figma, Sketch, Adobe XD, InVision, Photoshop
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROFESSIONAL EXPERIENCE
+
+SENIOR UX CONSULTANT – Netelixir (May 2017 – Jun 2023)
+• Led UX strategy for digital marketing platform serving 100+ SMBs
+• Designed LXRSEO: +8% conversion increase, +30% user retention
+• Created LXRGuide: Automated 40-hour weekly workflow to 5 minutes
+• Developed LXRInsights: Advanced audience segmentation platform
+• Built comprehensive design system with 150+ components
+• Mentored junior designers and established UX best practices
+
+PRODUCT DESIGN CONSULTANT – Bighi Brothers & Associates (Jul 2023 – Present)
+• Strategic UX consulting for early-stage and growth-stage startups
+• Bighi Brothers: Led edtech platform discovery and design strategy
+• Bhatia Master Classes: Designed educational content delivery system
+• Conducted 15+ user discovery workshops across multiple organizations
+• Delivered comprehensive UX recommendations and design strategies
+• Specialized in education tech, SaaS products, and startup ecosystems
+
+SENIOR UX DESIGNER – Extentia Technology (Feb 2016 – Feb 2017)
+• Designed SAP Fiori applications across enterprise domains
+• Created interactive demos used in 200+ global client presentations
+• Established UX standards aligned with enterprise guidelines
+
+UX DESIGNER – Infosys (Jul 2014 – Jan 2016)
+• Designed intuitive interfaces for complex enterprise workflows
+• Improved user satisfaction scores by 25% across 5 major projects
+• Cross-functional collaboration with development and product teams
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+KEY ACHIEVEMENTS
+✓ Designed 3 market-ready digital products with 100k+ users
+✓ Built design systems used across 50+ product surfaces
+✓ Led 50+ user research studies with comprehensive synthesis
+✓ Mentored 10+ designers across 3 organizations
+✓ 50+ successful client presentations and stakeholder workshops
+
+EDUCATION
+M.Des (Master of Design)          IIT Delhi, 2012-2014
+B.Tech (Computer Science)         Gurukul Kangri University, 2008-2012
+
+LANGUAGES & INTERESTS
+Languages: English, Hindi
+Creative Practice: Photography, Digital Illustration
+Professional Development: Design Leadership, Innovation Strategy`;
+
+    const contentElement = document.getElementById('resumeContent');
+    let index = 0;
+    let isTyping = true;
+
+    // Variable speed based on character type for dramatic effect
+    function getTypingSpeed(char, prevChar) {
+      // Slower for punctuation and section breaks
+      if (char === '━' || char === '│' || char === '\n') return 8;
+      if (['.', '!', '?', ',', ':'].includes(char)) return 35;
+      // Faster for regular text
+      return 4;
+    }
+
+    function typeWriter() {
+      if (index < resumeText.length && isTyping) {
+        const char = resumeText.charAt(index);
+        const prevChar = index > 0 ? resumeText.charAt(index - 1) : '';
+        
+        contentElement.textContent += char;
+        index++;
+        
+        const speed = getTypingSpeed(char, prevChar);
+        setTimeout(typeWriter, speed);
+      } else if (index >= resumeText.length) {
+        contentElement.classList.add('complete');
+        isTyping = false;
+      }
+    }
+
+    // Start typing when page loads
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', typeWriter);
+    } else {
+      typeWriter();
+    }
+
+    // PDF Download functionality
+    const downloadBtn = document.getElementById('downloadBtn');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', async () => {
+        downloadBtn.disabled = true;
+        const btnText = downloadBtn.textContent;
+        downloadBtn.textContent = '⟳ Generating...';
+
+        try {
+          // Create a new window for PDF content
+          const printWindow = window.open('', '', 'width=800,height=600');
+          const resumeContentEl = document.getElementById('resumeContent');
+          
+          printWindow.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <title>Prabhakar Kumar - Resume</title>
+              <style>
+                * {
+                  margin: 0;
+                  padding: 0;
+                }
+                body {
+                  font-family: 'Courier New', monospace;
+                  font-size: 10pt;
+                  line-height: 1.4;
+                  color: #000;
+                  background: #fff;
+                  padding: 15mm;
+                  width: 210mm;
+                  height: 297mm;
+                  box-sizing: border-box;
+                }
+                pre {
+                  white-space: pre-wrap;
+                  word-wrap: break-word;
+                  font-family: 'Courier New', monospace;
+                  font-size: 10pt;
+                }
+                @media print {
+                  body {
+                    padding: 10mm;
+                    margin: 0;
+                  }
+                  @page {
+                    size: A4;
+                    margin: 10mm;
+                  }
+                }
+              </style>
+            </head>
+            <body>
+              <pre>${resumeContentEl.textContent}</pre>
+            </body>
+            </html>
+          `);
+          
+          printWindow.document.close();
+          
+          // Wait for content to load, then print to PDF
+          setTimeout(() => {
+            printWindow.print();
+            setTimeout(() => printWindow.close(), 500);
+            downloadBtn.disabled = false;
+            downloadBtn.textContent = btnText;
+          }, 500);
+
+        } catch (error) {
+          console.error('PDF generation error:', error);
+          downloadBtn.disabled = false;
+          downloadBtn.textContent = btnText;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
