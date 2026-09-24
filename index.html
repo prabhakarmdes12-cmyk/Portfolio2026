@@ -1971,8 +1971,8 @@
     .modal-box {
       background: var(--bg2);
       border: 1px solid var(--border);
-      border-radius: 4px;
-      max-width: 700px;
+      border-radius: 6px;
+      max-width: 960px;
       width: 100%;
       max-height: 90vh;
       display: flex;
@@ -1987,17 +1987,18 @@
     }
 
     .modal-header {
-      padding: 24px 32px;
+      padding: 24px 36px;
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-shrink: 0;
+      background: var(--bg);
     }
 
     .modal-title {
       font-family: var(--font-display);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: var(--cream);
     }
@@ -2023,18 +2024,18 @@
     }
 
     .modal-body {
-      padding: 32px 40px 4px;
+      padding: 36px 44px;
       overflow-y: auto;
       flex: 1;
     }
 
     .modal-body h4 {
       font-family: var(--font-display);
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--amber);
-      margin: 2px 0 12px;
-      letter-spacing: 0.05em;
+      margin: 28px 0 14px;
+      letter-spacing: 0.03em;
     }
 
     .modal-body h4:first-child {
@@ -2042,8 +2043,8 @@
     }
 
     .modal-body p {
-      font-size: 0.95rem;
-      line-height: 1.75;
+      font-size: 0.98rem;
+      line-height: 1.8;
       color: var(--cream-dim);
       margin-bottom: 16px;
     }
@@ -2051,8 +2052,138 @@
     .modal-body ul {
       margin: 12px 0 20px 24px;
       color: var(--cream-dim);
-      font-size: 0.95rem;
-      line-height: 1.;
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+
+    .modal-body li {
+      margin-bottom: 8px;
+    }
+
+    /* Rich Case Study Components */
+    .modal-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      padding: 22px 24px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin-bottom: 32px;
+    }
+    .modal-meta-item .meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .modal-meta-item .meta-val {
+      font-size: 0.92rem;
+      color: var(--cream);
+      line-height: 1.5;
+    }
+
+    .modal-section {
+      margin-bottom: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .modal-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .modal-img-container {
+      margin: 22px 0 28px;
+      text-align: center;
+    }
+    .modal-img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+      display: block;
+    }
+    .modal-img-caption {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--cream-dim);
+      margin-top: 10px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      opacity: 0.8;
+    }
+
+    .modal-quote-box {
+      border-left: 3px solid var(--amber);
+      padding: 18px 24px;
+      background: rgba(200, 146, 58, 0.05);
+      border-radius: 0 4px 4px 0;
+      margin: 22px 0;
+      font-style: italic;
+      color: var(--cream);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .modal-quote-box .author {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--amber);
+      letter-spacing: 0.05em;
+    }
+
+    .modal-stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .modal-stat-card {
+      background: rgba(200, 146, 58, 0.04);
+      border: 1px solid rgba(200, 146, 58, 0.2);
+      border-radius: 4px;
+      padding: 22px 18px;
+      text-align: center;
+    }
+    .modal-stat-num {
+      font-family: var(--font-display);
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--amber);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .modal-stat-label {
+      font-size: 0.85rem;
+      color: var(--cream-dim);
+      line-height: 1.4;
+    }
+
+    .modal-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .modal-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 22px;
+    }
+    .modal-card h5 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--cream);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
     }
 
     .modal-body .modal-external {
@@ -2132,63 +2263,285 @@
     </div>
   </div>
   <div id="case-lxrguide" style="display:none;">
-    <h4>Overview</h4>
-    <p>In 201, LXRGuide was supporting small teams across the US in their marketing efforts. The tool helps users
-      increase sales from their website, identifying gaps in marketing efforts and suggesting actionable
-      recommendations. I led design for the LXRGuide Product Team at Netelixir; we launched the updated interface in
-      August 2018.</p>
-    <h4>Role</h4>
-    <p>UX Designer — User Research, Interaction Design, Visual Design, Prototyping &amp; Testing.</p>
-    <h4>Process</h4>
-    <p>Based on Double Diamond Theory and Lean UX: Discovery, Definition, Ideation, Implementation. I conducted research
-      interviews with primary users (account managers) to uncover pain points with the beta release.</p>
-    <h4>Key Outcomes</h4>
-    <ul>
-      <li>Reduced clicks and presented data on a single dashboard page</li>
-      <li>New optimizations viewing options by task type or campaign</li>
-      <li>Ads Grader, SEO Grader, Activity report, Performance report</li>
-      <li>Mobile app introduced for applying recommendations on the go</li>
-    </ul>
-    <h4>Result</h4>
-    <p>LXRGuide was able to crunch 40 hours of work into 5 minutes a week. In the first 30 days, one client's overall
-      website revenues went up 17.82% and paid search revenues increased 77%.</p>
-    <h4>Learning</h4>
-    <p>A dashboard should be clear, meaningful, consistent, and simple—presenting complex information in an
-      easy-to-understand format. Users should grasp its purpose within the first 5 seconds.</p>
-    <div class="modal-external">
-      <a href="https://prabhakardavinci.wixsite.com/uxdesign/copy-of-lxr-guide" target="_blank" rel="noopener">View full
-        case study on Wix →</a>
+    <div class="modal-meta-grid">
+      <div class="modal-meta-item">
+        <div class="meta-label">Scope</div>
+        <div class="meta-val">Product Strategy · Information Architecture · User Experience Design</div>
+      </div>
+      <div class="modal-meta-item">
+        <div class="meta-label">My Role</div>
+        <div class="meta-val">Lead UX Designer (Product Team Lead) · Launched August 2018</div>
+      </div>
+      <div class="modal-meta-item">
+        <div class="meta-label">Collaborators</div>
+        <div class="meta-val">CEO &amp; Co-founder · CTO · Digital Marketing Experts</div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>Overview &amp; Problem</h4>
+      <p>LXRGuide was created to support small businesses across the US in their paid marketing efforts by identifying optimization gaps and suggesting high-impact, actionable recommendations.</p>
+      <p><strong>The Core Challenge:</strong> Before NetElixir hired a dedicated UX team, a beta release of the new platform had been implemented based on blue-sky concepts without user validation. Account managers and SMB owners found the interface overwhelming, difficult to decipher, and disconnected from their daily workflows.</p>
+      <p>My research focused on:</p>
+      <ul>
+        <li>Understanding real user goals, routines, and daily cognitive friction.</li>
+        <li>Uncovering specific friction points within the existing AdWords &amp; marketing task journey.</li>
+        <li>Defining measurable task completion metrics to validate redesigned experiences.</li>
+      </ul>
+    </div>
+
+    <div class="modal-section">
+      <h4>Process: Double Diamond &amp; Lean UX</h4>
+      <p>Our process at NetElixir was grounded in the Double Diamond framework and Lean UX iteration, moving through structured phases of <strong>Discover, Define, Ideate, and Implement</strong>.</p>
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_60.jpg" alt="Double Diamond and Lean UX Framework" class="modal-img">
+        <div class="modal-img-caption">The Double Diamond &amp; Lean UX framework applied throughout the LXRGuide redesign lifecycle.</div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>User Personas &amp; Mental Models</h4>
+      <p>Choosing the correct metrics is the foundation of a usable dashboard. We established two primary archetypes to anchor design decisions:</p>
+      
+      <div class="modal-grid-2">
+        <div class="modal-card">
+          <h5>Daniel Snyder (Decision Maker / Entrepreneur)</h5>
+          <p style="font-size:0.88rem; color:var(--cream-dim);">Age 40+ · Owner of an automotive parts business for 10 years, expanding online.</p>
+          <ul style="font-size:0.88rem;">
+            <li><strong>Motivations:</strong> Maximize ROI, prevent ad budget waste, eliminate marketing confusion.</li>
+            <li><strong>Frustrations:</strong> Complex PPC terminology, lack of time, steep learning curves in Google Ads.</li>
+            <li><strong>Goal:</strong> Find a tool to streamline the marketing process and protect profitability.</li>
+          </ul>
+        </div>
+        <div class="modal-card">
+          <h5>Christopher (Actual Tool User / Marketing Support)</h5>
+          <p style="font-size:0.88rem; color:var(--cream-dim);">Age 34 · Customer support &amp; marketing coordinator managing daily campaigns.</p>
+          <ul style="font-size:0.88rem;">
+            <li><strong>Motivations:</strong> High task execution speed, accurate campaign recommendations, clarity.</li>
+            <li><strong>Frustrations:</strong> Tedious repetitive optimizations, multi-step spreadsheet workflows.</li>
+            <li><strong>Goal:</strong> Implement recommendations in minutes with zero guesswork.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_75.jpg" alt="Storyboarding and Journey Mapping Workshop" class="modal-img">
+        <div class="modal-img-caption">Storyboarding and journey mapping workshop synthesizing pain points across the user lifecycle.</div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>Visual Design &amp; Core Interface Solutions</h4>
+
+      <h5 style="color:var(--cream); font-size:1.05rem; margin:16px 0 8px;">1. Task-Centric Dashboard</h5>
+      <p>We designed the dashboard to answer the user's primary question within seconds. Rather than burying insights in dense tables, the new dashboard features a streamlined KPI graph against monthly targets, campaign snapshots, and an immediate Optimizations panel.</p>
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_78.jpg" alt="LXRGuide Working Dashboard" class="modal-img">
+        <div class="modal-img-caption">The redesigned dashboard: single-page visibility, KPI tracking, and transparent optimization cards.</div>
+      </div>
+
+      <h5 style="color:var(--cream); font-size:1.05rem; margin:24px 0 8px;">2. Flexible Optimization Viewing Options</h5>
+      <p>Users can view recommendations organized either by <strong>Task Type</strong> (Negative Keywords, Exact Match, Bid Adjustments) or by <strong>Campaign</strong> (e.g. Google Shopping). This flexibility gives operators granular control over how changes impact individual product lines.</p>
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_81.jpg" alt="Optimization Viewing Options" class="modal-img">
+        <div class="modal-img-caption">Viewing recommendations filtered by specific task category or by active campaign.</div>
+      </div>
+
+      <h5 style="color:var(--cream); font-size:1.05rem; margin:24px 0 8px;">3. Ads Grader &amp; Opportunity Scorecard</h5>
+      <p>An intelligent diagnostic tool that scans connected Google Ads accounts and generates a clear performance scorecard. It surfaces actionable gaps across Quality Score, Impression Share, Landing Page Performance, and Negative Keywords.</p>
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_84.jpg" alt="Ads Grader Opportunity Scorecard" class="modal-img">
+        <div class="modal-img-caption">Google Ads Opportunity Scorecard highlighting immediate areas of waste reduction and growth.</div>
+      </div>
+
+      <h5 style="color:var(--cream); font-size:1.05rem; margin:24px 0 8px;">4. SEO Grader</h5>
+      <p>Generates instant website health scores with clear, prioritized actions so users know exactly what technical adjustments will improve search rankings.</p>
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_87.jpg" alt="SEO Grader Report" class="modal-img">
+        <div class="modal-img-caption">SEO Grader report providing accessible website performance scores and remediation steps.</div>
+      </div>
+
+      <h5 style="color:var(--cream); font-size:1.05rem; margin:24px 0 8px;">5. AI Activity Report</h5>
+      <p>Tracks and visualizes the direct revenue impact of actions taken through LXRGuide's AI engine. By comparing completed vs pending tasks against performance graphs, it motivates users to apply recommendations on time.</p>
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_90.jpg" alt="LXRGuide Activity Report" class="modal-img">
+        <div class="modal-img-caption">Activity Report demonstrating the tangible business impact of applied AI recommendations.</div>
+      </div>
+
+      <h5 style="color:var(--cream); font-size:1.05rem; margin:24px 0 8px;">6. Diagnostic Performance Reports</h5>
+      <p>Purpose-built for executive presentations and agency client reviews, these reports restructure diagnostic telemetry into clear visual stories: current status, opportunities, improvement roadmap, and ROI.</p>
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_93.jpg" alt="Diagnostic Performance Reports" class="modal-img">
+        <div class="modal-img-caption">Redesigned diagnostic performance reporting used for strategic client reviews.</div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>Measurable Business Impact</h4>
+      <div class="modal-stats-row">
+        <div class="modal-stat-card">
+          <div class="modal-stat-num">40h → 5m</div>
+          <div class="modal-stat-label">Crunched 40 hours of manual spreadsheet work into 5 minutes per week</div>
+        </div>
+        <div class="modal-stat-card">
+          <div class="modal-stat-num">+17.82%</div>
+          <div class="modal-stat-label">Overall client website revenue increase within the first 30 days</div>
+        </div>
+        <div class="modal-stat-card">
+          <div class="modal-stat-num">+77%</div>
+          <div class="modal-stat-label">Paid search revenue growth achieved for key automotive client</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>Key Learnings: The 4 Dashboard Principles</h4>
+      <p>A dashboard is an interactive visual interface to present intricate data. Its purpose is to translate complex insights into an easy-to-understand format. An effective design adheres to four essential pillars:</p>
+      <ul>
+        <li><strong>1. Clarity:</strong> Promptly and unmistakably conveys intended information.</li>
+        <li><strong>2. Relevance:</strong> Surfaces only metrics that directly tie to operational decisions.</li>
+        <li><strong>3. Coherence:</strong> Maintains structural consistency across all report views.</li>
+        <li><strong>4. Simplicity (The 5-Second Rule):</strong> Users must grasp the purpose and priority within the first <strong>5 seconds</strong> of glance, eliminating the need for prolonged study.</li>
+      </ul>
     </div>
   </div>
   <div id="case-lxrseo" style="display:none;">
-    <h4>Overview</h4>
-    <p>LXRSEO: Your Website's SEO Scanner—measure and improve SEO performance with 62+ parameters.</p>
-    <h4>Scope</h4>
-    <p>Product Strategy, Information Architecture, User Experience Design.</p>
-    <h4>My Role</h4>
-    <p>As UX Designer I was responsible for the entire project: User persona development, card sorting workshop with
-      stakeholders, usability testing with real users, implementing findings in final design, and visual design.</p>
-    <h4>Research</h4>
-    <p>Conducted interviews with CEO, co-founder, digital marketing experts, and real users. Domain research with
-      WordStream Keyword Tool. Competitive analysis of 4 competitors in the SEO space. User research revealed challenges
-      in showcasing SEO's value and measuring ROI.</p>
-    <h4>Key Insights</h4>
-    <ul>
-      <li>Users desire automation for repetitive tasks</li>
-      <li>Steep learning curve—need for simplicity and clear data explanations</li>
-      <li>User-friendly onboarding crucial</li>
-    </ul>
-    <h4>Results</h4>
-    <ul>
-      <li>Increased free trial to paid conversion by 8%</li>
-      <li>User retention (13 weeks average) increased by 30%</li>
-      <li>Improved usability with actionable insights</li>
-    </ul>
-    <h4>Visual Design Principles</h4>
-    <p>Clarity, Relevance, Coherence, Simplicity.</p>
-    <div class="modal-external">
-      <a href="https://prabhakardavinci.wixsite.com/uxdesign/copy-of-seo-1" target="_blank" rel="noopener">View full
-        case study on Wix →</a>
+    <div class="modal-meta-grid">
+      <div class="modal-meta-item">
+        <div class="meta-label">Scope</div>
+        <div class="meta-val">Product Strategy · Information Architecture · User Experience Design</div>
+      </div>
+      <div class="modal-meta-item">
+        <div class="meta-label">My Role</div>
+        <div class="meta-val">Lead UX Designer (Full Project Execution)</div>
+      </div>
+      <div class="modal-meta-item">
+        <div class="meta-label">Collaborators</div>
+        <div class="meta-val">CEO &amp; Co-founder · Digital Marketing Experts · Real Users</div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>Overview &amp; Initial Discovery</h4>
+      <p>LXRSEO is an automated website scanner engineered to measure, benchmark, and improve SEO performance across <strong>62+ parameters</strong>.</p>
+      
+      <div class="modal-quote-box">
+        "When a second is worth more than 60,000 Searches, it's worth stepping back and taking a second look at your Website SEO."
+        <span class="author">— CEO &amp; Co-founder, NetElixir</span>
+      </div>
+
+      <p>As UX Designer, I held end-to-end responsibility for the project: stakeholder interviews, domain research, competitive analysis, persona development, open card sorting workshops, wireframing, usability testing, and final visual design.</p>
+    </div>
+
+    <div class="modal-section">
+      <h4>Domain Research &amp; Competitive Analysis</h4>
+      <p>Using the WordStream Keyword Tool, we researched user search behaviors. Even in low-competition segments, target keywords were searched between 500 and 8,000 times monthly in the US. The highest volume was consistently driven by users seeking simple, accessible SEO diagnostics.</p>
+      
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_17.jpg" alt="WordStream Keyword Tool Analysis" class="modal-img">
+        <div class="modal-img-caption">Domain research analyzing keyword volume and intent to frame product scope.</div>
+      </div>
+
+      <p>We conducted a rigorous competitive benchmark across 4 leading market tools: <strong>SpyFu, Moz, Screaming Frog, and NP Digital</strong>. We evaluated features including Keyword Analysis, Site Audits, Backlink Profiling, Custom Reports, and Interface Simplicity.</p>
+
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_23.jpg" alt="Competitive Analysis Matrix" class="modal-img">
+        <div class="modal-img-caption">Competitive feature comparison highlighting the market gap for an intuitive, affordable SMB SEO scanner.</div>
+      </div>
+
+      <p><strong>The Opportunity:</strong> Most tools were built for enterprise SEO technicians with dense, intimidating interfaces. Content marketers and SMB owners needed a straightforward tool that automated manual audits and provided plain-English guidance.</p>
+    </div>
+
+    <div class="modal-section">
+      <h4>User Research &amp; Personas</h4>
+      <p>Interviews with technical experts, CTOs, and non-technical business owners revealed several core challenges:</p>
+      <ul>
+        <li>Demonstrating SEO value to developers and securing executive buy-in is a constant hurdle.</li>
+        <li>Compared to PPC advertising, SEO lacks immediate, easily trackable feedback loops.</li>
+        <li>Users strongly desired automated scheduled audits and proactive issue alerts.</li>
+        <li>Technical jargon created a steep learning curve that hindered action.</li>
+      </ul>
+
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_29.jpg" alt="LXRSEO User Personas" class="modal-img">
+        <div class="modal-img-caption">Primary personas: Sarah Bergman (In-house SEO Analyst) &amp; Steven Pope (Freelance Developer).</div>
+      </div>
+
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_32.jpg" alt="Story of Sarah Storyboard" class="modal-img">
+        <div class="modal-img-caption">Storyboard illustrating Sarah's journey from tool fatigue to confident SEO optimization.</div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>Information Architecture &amp; Wireframing</h4>
+      <p>To establish an intuitive structure, I facilitated an <strong>Open Card Sorting Workshop</strong> with stakeholders and marketers. We mapped out user flows and organized the sitemap into logical modules: Website Landing, Tools, Page Grader, Web Auditor, Competitor Analysis, and Admin.</p>
+      
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_35.jpg" alt="Information Architecture and Sitemap" class="modal-img">
+        <div class="modal-img-caption">Sitemap and Information Architecture established through collaborative card sorting.</div>
+      </div>
+
+      <p>I began by sketching paper wireframes, then developed digital Figma prototypes emphasizing <strong>cognitive load reduction</strong>. Complex metrics were segmented into progressive disclosure layers.</p>
+
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_39.jpg" alt="LXRSEO Digital Wireframes" class="modal-img">
+        <div class="modal-img-caption">Early Figma wireframes focusing on clean data hierarchy, scanability, and actionable items.</div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>Usability Testing &amp; Iterative Refinement</h4>
+      <p>Testing sessions with real users yielded critical design refinements:</p>
+      <ul>
+        <li><strong>Comprehensive Overview:</strong> The summary screen was redesigned to offer an instant holistic snapshot (Keywords, Backlinks, Speed, and Reach).</li>
+        <li><strong>Intuitive Scoring:</strong> Users responded best to a single, authoritative score (0–100) with color-coded status benchmarks.</li>
+        <li><strong>Jargon Translation:</strong> Technical terms (e.g. meta descriptions, canonical tags, server response codes) were paired with contextual explanations and one-click fixes.</li>
+      </ul>
+
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_42.jpg" alt="Usability Testing Iterations" class="modal-img">
+        <div class="modal-img-caption">Usability testing refinements for Link Profiling and Content Relevance scoring.</div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>Final Visual Design</h4>
+      <p>The visual design balances data density with visual breathing room, using clear status indicators, clean typography, and purposeful data visualizations.</p>
+      
+      <div class="modal-img-container">
+        <img src="images/lxr/obj_48.jpg" alt="LXRSEO Visual Design Matrix" class="modal-img">
+        <div class="modal-img-caption">Final visual design matrix showing Page Grader, Competitor Benchmark, Technical Audit, and Link Analysis.</div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>Measurable Outcomes &amp; Impact</h4>
+      <div class="modal-stats-row">
+        <div class="modal-stat-card">
+          <div class="modal-stat-num">+8%</div>
+          <div class="modal-stat-label">Increase in Free Trial to Paid Conversion rate</div>
+        </div>
+        <div class="modal-stat-card">
+          <div class="modal-stat-num">+30%</div>
+          <div class="modal-stat-label">Increase in 13-week average user retention</div>
+        </div>
+        <div class="modal-stat-card">
+          <div class="modal-stat-num">62+</div>
+          <div class="modal-stat-label">Technical &amp; on-page SEO parameters simplified into actionable guidance</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>Core Dashboard Learnings</h4>
+      <p>Essential characteristics established for all data-rich dashboards across the NetElixir product suite:</p>
+      <ul>
+        <li><strong>Clarity:</strong> A well-designed dashboard unmistakably conveys intended information without visual noise.</li>
+        <li><strong>Relevance:</strong> Presents data that directly connects to user business objectives.</li>
+        <li><strong>Coherence:</strong> Provides visual harmony across navigation, reports, and detail drawers.</li>
+        <li><strong>Simplicity:</strong> Users must grasp its purpose within an initial glance of <strong>5 seconds</strong>.</li>
+      </ul>
     </div>
   </div>
   <div id="case-cookbot" style="display:none;">
@@ -2633,7 +2986,7 @@
     </div>
 
     <div class="personal-grid" style="grid-template-columns: 1fr; max-width: 900px; margin: 0 auto;">
-      <a href="https://prabhakarmdes12-cmyk.github.io/Bhatia-Master-Classes/" target="_blank"
+      <a href="https://www.bhatiamasterclasses.com/" target="_blank"
         class="personal-card reveal" style="padding: 0; padding-bottom: 40px; display: flex; flex-direction: column; margin-bottom: 40px;">
         <div class="personal-image">
           <!-- High quality screenshot of the live site -->
@@ -2652,7 +3005,7 @@
         </div>
       </a>
 
-      <a href="https://cosmic-tantra.vercel.app/" target="_blank"
+      <a href="https://cosmictantra.chiti.tech/" target="_blank"
         class="personal-card reveal" style="padding: 0; padding-bottom: 40px; display: flex; flex-direction: column;">
         <div class="personal-image">
           <img src="images/cosmic-tantra-preview.png" alt="Cosmic Tantra Preview">
