@@ -1399,6 +1399,168 @@
       transition: width 1.5s ease;
     }
 
+        /* MOBILE DRAWER OVERLAY */
+    .nav-mobile-drawer {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      background: var(--bg);
+      z-index: 10002;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      overflow-y: auto;
+      padding: 20px 24px 36px;
+    }
+
+    [data-theme="dark"] .nav-mobile-drawer {
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    [data-theme="light"] .nav-mobile-drawer {
+      background: rgba(248, 246, 241, 0.98);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    .nav-mobile-drawer.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .nav-drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .nav-drawer-close {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--cream);
+      font-size: 1.8rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .nav-drawer-close:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+
+    .nav-drawer-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      padding-top: 28px;
+      gap: 28px;
+    }
+
+    .nav-drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .drawer-link {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--cream);
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(200, 146, 58, 0.1);
+      transition: all 0.25s ease;
+    }
+
+    .drawer-link:hover,
+    .drawer-link:active {
+      color: var(--amber);
+      padding-left: 8px;
+      border-bottom-color: var(--amber);
+    }
+
+    .drawer-num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--amber);
+      font-weight: 400;
+    }
+
+    .nav-drawer-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .drawer-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 16px 24px;
+      background: var(--amber);
+      color: #0a0a0a;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(200, 146, 58, 0.25);
+    }
+
+    .drawer-cta:hover {
+      background: var(--amber-light);
+      transform: translateY(-2px);
+    }
+
+    .drawer-contact-info {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--cream-dim);
+    }
+
+    .drawer-contact-info a {
+      color: var(--cream-dim);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .drawer-contact-info a:hover {
+      color: var(--amber);
+    }
+
     /* MOBILE */
     .nav-mobile-toggle {
       display: none;
@@ -1408,14 +1570,12 @@
       display: none;
     }
 
-    .nav-mobile-menu {
-      display: none;
-    }
-
     @media (max-width: 768px) {
       nav {
         padding: 20px 24px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
       }
 
       nav::after {
@@ -1572,6 +1732,11 @@
         gap: 16px;
       }
 
+      .exp-item::before {
+        left: 0;
+        right: 0;
+      }
+
       .exp-tags {
         justify-content: flex-start;
       }
@@ -1686,6 +1851,7 @@
 
     /* PROJECTS */
     #ux-case-studies {
+      overflow: hidden;
       padding: 160px 60px;
       background: var(--bg2);
       position: relative;
@@ -3027,25 +3193,17 @@
       </div>
     </div>
   </div>
-  <!-- Navigation -->
-  <nav>
+    <!-- Navigation -->
+  <nav id="mainNav">
     <a href="index.html" class="nav-logo">Prabhakar <span>Kumar</span></a>
     <div class="nav-mobile-toggle">
-      <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
       <button type="button" class="theme-toggle" id="themeToggleMobile" aria-label="Toggle dark/light mode">
         <span class="icon-sun">☀️</span>
         <span class="icon-moon">🌙</span>
       </button>
-    </div>
-    <div class="nav-mobile-menu" id="navMobileMenu">
-      <a href="#about">About</a>
-      <a href="#experience">Work</a>
-      <a href="#domains">Domains</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact" class="nav-cta" style="margin-top:12px;text-align:center;border-radius:2px;">Let's Talk</a>
+      <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
     <div class="nav-links">
       <a href="#about">About</a>
@@ -3060,6 +3218,31 @@
       <a href="#contact" class="nav-cta">Let's Talk</a>
     </div>
   </nav>
+
+  <!-- Fullscreen Mobile Navigation Drawer -->
+  <div class="nav-mobile-drawer" id="navMobileMenu" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <div class="nav-drawer-header">
+      <a href="index.html" class="nav-logo">Prabhakar <span>Kumar</span></a>
+      <button type="button" class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="nav-drawer-content">
+      <div class="nav-drawer-links">
+        <a href="#about" class="drawer-link"><span class="drawer-num">01</span> About</a>
+        <a href="#experience" class="drawer-link"><span class="drawer-num">02</span> Work &amp; Experience</a>
+        <a href="#domains" class="drawer-link"><span class="drawer-num">03</span> Domains</a>
+        <a href="#projects" class="drawer-link"><span class="drawer-num">04</span> UX Projects</a>
+        <a href="#education" class="drawer-link"><span class="drawer-num">05</span> Academic Roots</a>
+        <a href="resume.html" target="_blank" class="drawer-link"><span class="drawer-num">06</span> View Resume (PDF)</a>
+      </div>
+      <div class="nav-drawer-footer">
+        <a href="#contact" class="drawer-cta">Let's Talk →</a>
+        <div class="drawer-contact-info">
+          <a href="mailto:prabhakarmdes12@gmail.com">prabhakarmdes12@gmail.com</a>
+          <a href="tel:+919972934937">+91 99729 34937</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section id="hero">
@@ -3852,27 +4035,52 @@
   <script src="theme.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
-    // MOBILE MENU
+    // MOBILE MENU DRAWER
     const hamburger = document.getElementById('navHamburger');
+    const drawerClose = document.getElementById('navDrawerClose');
     const mobileMenu = document.getElementById('navMobileMenu');
-    if (hamburger && mobileMenu) {
-      hamburger.addEventListener('click', () => {
-        const open = mobileMenu.classList.toggle('open');
-        hamburger.classList.toggle('active', open);
-        hamburger.setAttribute('aria-expanded', open);
-        hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-        document.body.style.overflow = open ? 'hidden' : '';
+
+    const openDrawer = () => {
+      if (!mobileMenu) return;
+      mobileMenu.classList.add('open');
+      hamburger?.classList.add('active');
+      hamburger?.setAttribute('aria-expanded', 'true');
+      hamburger?.setAttribute('aria-label', 'Close menu');
+      document.body.style.overflow = 'hidden';
+      drawerClose?.focus();
+    };
+
+    const closeDrawer = () => {
+      if (!mobileMenu) return;
+      mobileMenu.classList.remove('open');
+      hamburger?.classList.remove('active');
+      hamburger?.setAttribute('aria-expanded', 'false');
+      hamburger?.setAttribute('aria-label', 'Open menu');
+      document.body.style.overflow = '';
+      hamburger?.focus();
+    };
+
+    hamburger?.addEventListener('click', () => {
+      if (mobileMenu?.classList.contains('open')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
+
+    drawerClose?.addEventListener('click', closeDrawer);
+
+    mobileMenu?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        closeDrawer();
       });
-      mobileMenu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-          hamburger.classList.remove('active');
-          hamburger.setAttribute('aria-expanded', 'false');
-          hamburger.setAttribute('aria-label', 'Open menu');
-          document.body.style.overflow = '';
-        });
-      });
-    }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu?.classList.contains('open')) {
+        closeDrawer();
+      }
+    });
     // CASE STUDY MODAL
     const modal = document.getElementById('caseStudyModal');
     const modalBody = document.getElementById('modalBody');
