@@ -1147,6 +1147,11 @@
     }
 
     @media (max-width: 1080px) {
+      #hero {
+        min-height: auto;
+        justify-content: flex-start;
+        padding: 120px 32px 70px;
+      }
       .hero-split-stage {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1159,23 +1164,135 @@
       }
     }
 
+    @media (max-width: 768px) {
+      #hero {
+        padding: 104px 24px 60px;
+      }
+      .hero-title {
+        font-size: clamp(2.1rem, 7.5vw, 2.75rem);
+        line-height: 1.15;
+      }
+      .hero-title em {
+        display: inline-block;
+        white-space: nowrap;
+      }
+    }
+
     @media (max-width: 640px) {
       #hero {
-        padding: 100px 20px 60px;
+        padding: 96px 18px 50px;
+      }
+      .hero-title {
+        font-size: clamp(1.95rem, 8.2vw, 2.45rem);
+        line-height: 1.14;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+        word-break: normal;
+        overflow-wrap: break-word;
+      }
+      .hero-title span:first-child {
+        display: inline;
+      }
+      .hero-title em {
+        display: inline-block;
+        white-space: nowrap;
+      }
+      .hero-title-sub {
+        display: block;
+        margin-top: 2px;
+      }
+      .hero-lead {
+        font-size: 0.98rem;
+        line-height: 1.62;
+        margin-bottom: 22px;
+      }
+      .hero-lens-box {
+        padding: 14px 14px;
+        margin-bottom: 22px;
       }
       .lens-tabs {
         grid-template-columns: 1fr;
+        gap: 8px;
       }
-      .hero-bento-strip {
-        grid-template-columns: 1fr;
+      .lens-tab {
+        padding: 10px 12px;
+        font-size: 0.78rem;
       }
       .hero-actions {
         flex-direction: column;
         align-items: stretch;
+        gap: 12px;
       }
       .hero-btn-primary, .hero-btn-secondary {
         justify-content: center;
         width: 100%;
+        padding: 14px 20px;
+      }
+      .hero-viewport-terminal {
+        margin-top: 8px;
+        border-radius: 10px;
+      }
+      .viewport-panel {
+        padding: 18px 14px;
+      }
+      .vp-panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+      .vp-heading {
+        font-size: 1.05rem;
+      }
+      .topo-grid {
+        gap: 6px;
+      }
+      .topo-node {
+        min-width: 0;
+        flex: 1;
+        padding: 8px 4px;
+      }
+      .topo-node-name {
+        font-size: 0.62rem;
+      }
+      .topo-node-status {
+        font-size: 0.58rem;
+      }
+      .topo-link {
+        margin: 0 3px;
+      }
+      .hero-bento-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 10px;
+      }
+      .bento-card {
+        padding: 14px 14px;
+      }
+      .bento-card-num {
+        font-size: 1.45rem;
+      }
+      .bento-card-label {
+        font-size: 0.68rem;
+      }
+      .bento-card-sub {
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #hero {
+        padding: 90px 14px 44px;
+      }
+      .hero-title {
+        font-size: 1.9rem;
+      }
+      .hero-title em {
+        display: inline-block;
+        white-space: nowrap;
+      }
+      .hero-bento-strip {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -2292,10 +2409,14 @@
 
     @media (max-width: 768px) {
       nav.site-nav, nav:not(.reader-toc-nav) {
-        padding: 20px 24px;
+        padding: 16px 20px;
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
+        background: var(--nav-scroll-bg) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border-bottom: 1px solid var(--border);
       }
 
       nav.site-nav::after, nav:not(.reader-toc-nav)::after {
@@ -2379,41 +2500,19 @@
         color: var(--amber);
       }
 
-      #hero {
-        padding: 0 24px 48px;
-        min-height: 90vh;
-      }
-
-      .hero-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 40px;
-        margin-top: 40px;
-      }
-
-      .hero-desc {
-        max-width: none;
-      }
-
-      .hero-stats {
-        gap: 40px;
-        flex-wrap: wrap;
-      }
-
-      .stat {
-        text-align: left;
-      }
-
-      .stat-num {
-        font-size: 2.5rem;
-      }
-
       #about,
       #experience,
       #domains,
+      #ux-case-studies,
       #education,
       #contact {
         padding: 80px 24px;
+      }
+
+      #ux-case-studies::before {
+        font-size: 6rem;
+        left: 24px;
+        top: 40px;
       }
 
       #philosophy {
@@ -2441,10 +2540,6 @@
       .contact-inner {
         grid-template-columns: 1fr;
         gap: 60px;
-      }
-
-      .hero-stats {
-        gap: 32px;
       }
 
       .exp-item {
@@ -2520,41 +2615,32 @@
     }
 
     @media (max-width: 480px) {
-      #hero {
-        padding: 0 20px 40px;
-      }
-
-      .hero-title {
-        font-size: clamp(2.5rem, 12vw, 4rem);
-      }
-
       #about,
       #experience,
       #domains,
+      #ux-case-studies,
       #education,
       #contact {
         padding: 60px 20px;
+      }
+
+      #ux-case-studies::before {
+        font-size: 4.5rem;
+        left: 20px;
+        top: 30px;
       }
 
       #philosophy {
         padding: 60px 20px;
       }
 
-      .hero-stats {
-        gap: 24px;
-      }
-
-      .stat-num {
-        font-size: 2rem;
-      }
-
       nav.site-nav, nav:not(.reader-toc-nav) {
-        padding: 16px 20px;
+        padding: 14px 18px;
       }
 
       nav.site-nav::after, nav:not(.reader-toc-nav)::after {
-        left: 20px;
-        right: 20px;
+        left: 18px;
+        right: 18px;
       }
     }
 
@@ -6377,14 +6463,25 @@
     // NAV BG ON SCROLL
     const nav = document.querySelector('nav');
     const updateNavBg = () => {
-      nav.style.background = window.scrollY > 80 ? 'var(--nav-scroll-bg)' : 'transparent';
-      nav.style.backdropFilter = window.scrollY > 80 ? 'blur(20px)' : 'none';
+      if (!nav) return;
+      if (window.innerWidth <= 768) {
+        nav.style.background = 'var(--nav-scroll-bg)';
+        nav.style.backdropFilter = 'blur(16px)';
+        nav.style.webkitBackdropFilter = 'blur(16px)';
+      } else {
+        nav.style.background = window.scrollY > 80 ? 'var(--nav-scroll-bg)' : 'transparent';
+        nav.style.backdropFilter = window.scrollY > 80 ? 'blur(20px)' : 'none';
+        nav.style.webkitBackdropFilter = window.scrollY > 80 ? 'blur(20px)' : 'none';
+      }
     };
     window.addEventListener('scroll', updateNavBg);
+    window.addEventListener('resize', updateNavBg);
     updateNavBg();
 
-    // PARALLAX HERO
+    // PARALLAX HERO (Desktop only, reduced-motion safe)
     window.addEventListener('scroll', () => {
+      if (window.innerWidth <= 768) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const y = window.scrollY;
       const heroTitle = document.querySelector('.hero-title');
       if (heroTitle && y < window.innerHeight) {
