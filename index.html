@@ -3489,6 +3489,251 @@
         height: 240px;
       }
     }
+    
+/* CONTACT LINK ICONS & HOVER */
+    .contact-link-icon {
+      color: var(--amber);
+      transition: all 0.3s ease;
+    }
+    .contact-link:hover .contact-link-icon {
+      border-color: var(--amber);
+      background: rgba(229, 173, 82, 0.12);
+      transform: scale(1.05);
+    }
+    .contact-arrow svg {
+      display: block;
+    }
+
+    /* FOOTER ACCESSIBILITY DECK */
+    footer {
+      padding: 60px 48px 40px;
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .footer-a11y-container {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+    }
+
+    [data-theme="light"] .footer-a11y-container {
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    .footer-a11y-header {
+      margin-bottom: 20px;
+    }
+
+    .a11y-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .a11y-badge-icon {
+      color: var(--amber);
+    }
+
+    .a11y-heading {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    .a11y-chip {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(229, 173, 82, 0.12);
+      color: var(--amber);
+      border: 1px solid rgba(229, 173, 82, 0.3);
+      font-weight: 600;
+    }
+
+    .a11y-explanation {
+      font-size: 0.84rem;
+      color: var(--cream-dim);
+      line-height: 1.5;
+      max-width: 800px;
+    }
+
+    .a11y-controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      align-items: flex-end;
+    }
+
+    .a11y-control-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .a11y-label {
+      font-family: var(--font-mono);
+      font-size: 0.70rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      font-weight: 500;
+    }
+
+    .a11y-btn-group {
+      display: flex;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 3px;
+      gap: 4px;
+    }
+
+    .a11y-btn {
+      flex: 1;
+      padding: 6px 10px;
+      border: none;
+      background: transparent;
+      color: var(--cream-dim);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .a11y-btn:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--cream);
+    }
+
+    .a11y-btn.active {
+      background: var(--amber);
+      color: var(--bg);
+      font-weight: 600;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .a11y-reset-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: transparent;
+      border: 1px dashed var(--border);
+      border-radius: 5px;
+      color: var(--cream-dim);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      height: 34px;
+    }
+
+    .a11y-reset-button:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+      background: rgba(229, 173, 82, 0.06);
+    }
+
+    .footer-legal-bar {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--cream-dim);
+    }
+
+    .footer-a11y-statement {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    /* ACCESSIBILITY USER PREFERENCE MODES */
+    /* High Contrast Mode */
+    [data-a11y-contrast="max"] {
+      --border: rgba(229, 173, 82, 0.5) !important;
+      --border-subtle: rgba(229, 173, 82, 0.3) !important;
+    }
+    [data-a11y-contrast="max"] .personal-card,
+    [data-a11y-contrast="max"] .domain-card,
+    [data-a11y-contrast="max"] .project-card,
+    [data-a11y-contrast="max"] .hero-viewport-terminal,
+    [data-a11y-contrast="max"] .contact-link {
+      border-width: 2px !important;
+      border-color: var(--amber) !important;
+      background: rgba(0, 0, 0, 0.95) !important;
+    }
+
+    /* Text Scaling */
+    html[data-a11y-scale="115"] { font-size: 115% !important; }
+    html[data-a11y-scale="130"] { font-size: 130% !important; }
+
+    /* Reduced Motion */
+    [data-a11y-motion="reduced"] *,
+    [data-a11y-motion="reduced"] *::before,
+    [data-a11y-motion="reduced"] *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    [data-a11y-motion="reduced"] #marqueeTrack {
+      animation: none !important;
+      transform: none !important;
+    }
+    [data-a11y-motion="reduced"] .hero-ambient-glow {
+      filter: none !important;
+      transition: none !important;
+    }
+
+    /* High Visibility Focus */
+    [data-a11y-focus="high"] *:focus-visible {
+      outline: 4px solid var(--amber) !important;
+      outline-offset: 4px !important;
+      box-shadow: 0 0 0 8px rgba(229, 173, 82, 0.35) !important;
+    }
+
+    @media (max-width: 768px) {
+      footer {
+        padding: 40px 20px 30px;
+      }
+      .a11y-controls-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-legal-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
     </style>
 </head>
 
@@ -4688,8 +4933,8 @@
     <a href="index.html" class="nav-logo">Prabhakar <span>Kumar</span></a>
     <div class="nav-mobile-toggle">
       <button type="button" class="theme-toggle" id="themeToggleMobile" aria-label="Toggle dark/light mode">
-        <span class="icon-sun">☀️</span>
-        <span class="icon-moon">🌙</span>
+        <span class="icon-sun" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+        <span class="icon-moon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
       </button>
       <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -4706,8 +4951,8 @@
       <a href="#projects">Projects</a>
       <a href="#education">Education</a>
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-        <span class="icon-sun">☀️</span>
-        <span class="icon-moon">🌙</span>
+        <span class="icon-sun" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+        <span class="icon-moon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
       </button>
       <a href="#contact" class="nav-cta">Let's Talk</a>
     </div>
@@ -5568,14 +5813,14 @@
       <div class="section-label reveal">Continuous Learning</div>
       <div style="display:flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;">
         <div class="personal-card reveal" style="flex: 1; min-width: 240px;">
-          <div class="personal-icon">🎯</div>
+          <div class="personal-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--amber);" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
           <div class="personal-title">Design Thinking</div>
           <div class="personal-text">Workshop participant at NetElixir, Hyderabad — applying systematic
             problem-solving
             frameworks to real design challenges.</div>
         </div>
         <div class="personal-card reveal reveal-delay-1" style="flex: 1; min-width: 240px;">
-          <div class="personal-icon">📸</div>
+          <div class="personal-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--amber);" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg></div>
           <div class="personal-title">Photography Workshop</div>
           <div class="personal-text">Formal training at Infosys, Bangalore — sharpening visual storytelling skills
             that
@@ -5601,28 +5846,63 @@
       </div>
       <div class="contact-links">
         <a href="mailto:prabhakarmdes12@gmail.com" class="contact-link reveal">
-          <div class="contact-link-icon">&#10003;</div>
+          <div class="contact-link-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="M22 7l-10 7L2 7"></path>
+            </svg>
+          </div>
           <div class="contact-link-text">
             <div class="contact-link-label">Email</div>
             <div class="contact-link-value">prabhakarmdes12@gmail.com</div>
           </div>
-          <div class="contact-arrow">→</div>
+          <div class="contact-arrow" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
         </a>
         <a href="tel:+919972934937" class="contact-link reveal reveal-delay-1">
-          <div class="contact-link-icon">📞</div>
+          <div class="contact-link-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
           <div class="contact-link-text">
             <div class="contact-link-label">Phone</div>
             <div class="contact-link-value">+91 99729 34937</div>
           </div>
-          <div class="contact-arrow">→</div>
+          <div class="contact-arrow" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
         </a>
         <a href="resume.html" target="_blank" class="contact-link reveal reveal-delay-2"
           aria-label="View and download resume">
-          <div class="contact-link-icon">📄</div>
+          <div class="contact-link-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
           <div class="contact-link-text">
             <div class="contact-link-label">Resume</div>
             <div class="contact-link-value">View &amp; Download Resume (PDF)</div>
           </div>
+          <div class="contact-arrow" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+      </div>
           <div class="contact-arrow">→</div>
         </a>
       </div>
@@ -5724,9 +6004,88 @@
   </div>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-copy">&#169; 2026 Prabhakar Kumar — All rights reserved</div>
-    <div class="footer-love">Crafted with <span>&#10084;</span> &amp; Figma</div>
+  <footer id="siteFooter">
+    <div class="footer-a11y-container">
+      <div class="footer-a11y-header">
+        <div class="a11y-header-left">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="a11y-badge-icon" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="7" r="1.5"></circle>
+            <path d="M7 11h10"></path>
+            <path d="M12 11v6"></path>
+            <path d="M9 20l3-3 3 3"></path>
+          </svg>
+          <span class="a11y-heading">Accessibility Preferences</span>
+          <span class="a11y-chip">WCAG 2.2 AAA</span>
+        </div>
+        <p class="a11y-explanation">
+          Built to WCAG 2.2 Level AAA contrast and interaction standards. Adjust display and interaction modes below:
+        </p>
+      </div>
+
+      <div class="a11y-controls-grid">
+        <!-- 1. Contrast Toggle -->
+        <div class="a11y-control-card">
+          <span class="a11y-label">Contrast Mode</span>
+          <div class="a11y-btn-group" role="group" aria-label="Contrast Mode">
+            <button type="button" class="a11y-btn active" id="a11yContrastStd" aria-pressed="true">Standard AAA</button>
+            <button type="button" class="a11y-btn" id="a11yContrastMax" aria-pressed="false">Max Contrast</button>
+          </div>
+        </div>
+
+        <!-- 2. Text Scaling -->
+        <div class="a11y-control-card">
+          <span class="a11y-label">Text Scale</span>
+          <div class="a11y-btn-group" role="group" aria-label="Text Scaling">
+            <button type="button" class="a11y-btn active" data-scale="100" id="a11yScale100" aria-pressed="true">100%</button>
+            <button type="button" class="a11y-btn" data-scale="115" id="a11yScale115" aria-pressed="false">115%</button>
+            <button type="button" class="a11y-btn" data-scale="130" id="a11yScale130" aria-pressed="false">130%</button>
+          </div>
+        </div>
+
+        <!-- 3. Reduced Motion -->
+        <div class="a11y-control-card">
+          <span class="a11y-label">Motion &amp; Animations</span>
+          <div class="a11y-btn-group" role="group" aria-label="Motion Controls">
+            <button type="button" class="a11y-btn active" id="a11yMotionOn" aria-pressed="true">Motion On</button>
+            <button type="button" class="a11y-btn" id="a11yMotionReduced" aria-pressed="false">Reduced Motion</button>
+          </div>
+        </div>
+
+        <!-- 4. High-Visibility Focus -->
+        <div class="a11y-control-card">
+          <span class="a11y-label">Keyboard Focus Rings</span>
+          <div class="a11y-btn-group" role="group" aria-label="Keyboard Focus Rings">
+            <button type="button" class="a11y-btn active" id="a11yFocusStd" aria-pressed="true">Standard</button>
+            <button type="button" class="a11y-btn" id="a11yFocusHigh" aria-pressed="false">High Visibility</button>
+          </div>
+        </div>
+
+        <!-- 5. Reset Button -->
+        <div class="a11y-control-card a11y-reset-card">
+          <span class="a11y-label">&nbsp;</span>
+          <button type="button" class="a11y-reset-button" id="a11yResetAll">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="1 4 1 10 7 10"></polyline>
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+            </svg>
+            <span>Reset Defaults</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal-bar">
+      <div class="footer-copy">&#169; 2026 Prabhakar Kumar &mdash; All rights reserved</div>
+      <div class="footer-a11y-statement">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--amber);" aria-hidden="true">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span>WCAG 2.2 AAA Compliant</span>
+      </div>
+      <div class="footer-love">Crafted with <span>&#10084;</span> &amp; Figma</div>
+    </div>
   </footer>
 
   <script src="theme.js"></script>
@@ -6178,6 +6537,108 @@
       document.addEventListener('DOMContentLoaded', initHeroSystemLens);
     } else {
       initHeroSystemLens();
+    }
+  
+// ACCESSIBILITY PREFERENCES ENGINE
+    const initA11yPreferences = () => {
+      const STORAGE_KEY = 'pk_a11y_prefs_v1';
+      const root = document.documentElement;
+
+      let prefs = {
+        contrast: 'std',
+        scale: '100',
+        motion: 'active',
+        focus: 'std'
+      };
+
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) prefs = Object.assign(prefs, JSON.parse(saved));
+      } catch (e) {}
+
+      const save = () => {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs)); } catch (e) {}
+      };
+
+      const apply = () => {
+        // Contrast
+        if (prefs.contrast === 'max') {
+          root.setAttribute('data-a11y-contrast', 'max');
+        } else {
+          root.removeAttribute('data-a11y-contrast');
+        }
+        document.getElementById('a11yContrastStd')?.classList.toggle('active', prefs.contrast === 'std');
+        document.getElementById('a11yContrastStd')?.setAttribute('aria-pressed', prefs.contrast === 'std' ? 'true' : 'false');
+        document.getElementById('a11yContrastMax')?.classList.toggle('active', prefs.contrast === 'max');
+        document.getElementById('a11yContrastMax')?.setAttribute('aria-pressed', prefs.contrast === 'max' ? 'true' : 'false');
+
+        // Scale
+        if (prefs.scale === '115') {
+          root.setAttribute('data-a11y-scale', '115');
+        } else if (prefs.scale === '130') {
+          root.setAttribute('data-a11y-scale', '130');
+        } else {
+          root.removeAttribute('data-a11y-scale');
+        }
+        ['100', '115', '130'].forEach(s => {
+          const btn = document.getElementById('a11yScale' + s);
+          if (btn) {
+            const isActive = prefs.scale === s;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          }
+        });
+
+        // Motion
+        if (prefs.motion === 'reduced') {
+          root.setAttribute('data-a11y-motion', 'reduced');
+        } else {
+          root.removeAttribute('data-a11y-motion');
+        }
+        document.getElementById('a11yMotionOn')?.classList.toggle('active', prefs.motion === 'active');
+        document.getElementById('a11yMotionOn')?.setAttribute('aria-pressed', prefs.motion === 'active' ? 'true' : 'false');
+        document.getElementById('a11yMotionReduced')?.classList.toggle('active', prefs.motion === 'reduced');
+        document.getElementById('a11yMotionReduced')?.setAttribute('aria-pressed', prefs.motion === 'reduced' ? 'true' : 'false');
+
+        // Focus
+        if (prefs.focus === 'high') {
+          root.setAttribute('data-a11y-focus', 'high');
+        } else {
+          root.removeAttribute('data-a11y-focus');
+        }
+        document.getElementById('a11yFocusStd')?.classList.toggle('active', prefs.focus === 'std');
+        document.getElementById('a11yFocusStd')?.setAttribute('aria-pressed', prefs.focus === 'std' ? 'true' : 'false');
+        document.getElementById('a11yFocusHigh')?.classList.toggle('active', prefs.focus === 'high');
+        document.getElementById('a11yFocusHigh')?.setAttribute('aria-pressed', prefs.focus === 'high' ? 'true' : 'false');
+      };
+
+      // Event Listeners
+      document.getElementById('a11yContrastStd')?.addEventListener('click', () => { prefs.contrast = 'std'; save(); apply(); });
+      document.getElementById('a11yContrastMax')?.addEventListener('click', () => { prefs.contrast = 'max'; save(); apply(); });
+
+      document.getElementById('a11yScale100')?.addEventListener('click', () => { prefs.scale = '100'; save(); apply(); });
+      document.getElementById('a11yScale115')?.addEventListener('click', () => { prefs.scale = '115'; save(); apply(); });
+      document.getElementById('a11yScale130')?.addEventListener('click', () => { prefs.scale = '130'; save(); apply(); });
+
+      document.getElementById('a11yMotionOn')?.addEventListener('click', () => { prefs.motion = 'active'; save(); apply(); });
+      document.getElementById('a11yMotionReduced')?.addEventListener('click', () => { prefs.motion = 'reduced'; save(); apply(); });
+
+      document.getElementById('a11yFocusStd')?.addEventListener('click', () => { prefs.focus = 'std'; save(); apply(); });
+      document.getElementById('a11yFocusHigh')?.addEventListener('click', () => { prefs.focus = 'high'; save(); apply(); });
+
+      document.getElementById('a11yResetAll')?.addEventListener('click', () => {
+        prefs = { contrast: 'std', scale: '100', motion: 'active', focus: 'std' };
+        save();
+        apply();
+      });
+
+      apply();
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initA11yPreferences);
+    } else {
+      initA11yPreferences();
     }
   </script>
 </body>
