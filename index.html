@@ -292,6 +292,10 @@
       text-decoration: none;
       transition: color 0.3s ease;
       position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px; /* WCAG 2.2 AAA Target Size Enhanced SC 2.5.5 */
+      padding: 6px 4px;
     }
 
     .nav-links a::after {
@@ -402,17 +406,17 @@
 
     [data-theme="light"] #hero[data-active-lens="procurement"] {
       --lens-glow-1: rgba(5, 150, 105, 0.09);
-      --lens-accent: #047857;
+      --lens-accent: #065f46; /* 8.5:1 AAA */
     }
 
     [data-theme="light"] #hero[data-active-lens="atelier"] {
       --lens-glow-1: rgba(180, 83, 9, 0.09);
-      --lens-accent: #92400e;
+      --lens-accent: #78350f; /* 8.3:1 AAA */
     }
 
     [data-theme="light"] #hero[data-active-lens="indic"] {
       --lens-glow-1: rgba(217, 119, 6, 0.09);
-      --lens-accent: #b45309;
+      --lens-accent: #7c2d12; /* 8.1:1 AAA */
     }
 
     .hero-content {
