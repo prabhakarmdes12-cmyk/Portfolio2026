@@ -3590,6 +3590,181 @@
       display: block;
     }
 
+    /* HEADER ACCESSIBILITY BUTTON & POPUP (WCAG 2.2 AAA) */
+    .a11y-header-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: transparent;
+      color: var(--cream-dim);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .a11y-header-btn:hover,
+    .a11y-header-btn.active,
+    .a11y-header-btn[aria-expanded="true"] {
+      border-color: var(--amber);
+      color: var(--amber);
+      background: rgba(229, 173, 82, 0.08);
+    }
+
+    .a11y-header-btn:focus-visible {
+      outline: 3px solid var(--amber) !important;
+      outline-offset: 2px !important;
+    }
+
+    .drawer-a11y-link {
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* ACCESSIBILITY PREFERENCES MODAL */
+    .a11y-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 100010;
+      background: rgba(9, 9, 11, 0.80);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s ease;
+    }
+
+    [data-theme="light"] .a11y-modal-backdrop {
+      background: rgba(248, 246, 241, 0.82);
+    }
+
+    .a11y-modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .a11y-modal-dialog {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 680px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 28px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      transform: scale(0.96) translateY(8px);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .a11y-modal-backdrop.open .a11y-modal-dialog {
+      transform: scale(1) translateY(0);
+    }
+
+    .a11y-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .a11y-modal-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .a11y-modal-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .a11y-modal-close {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--cream);
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .a11y-modal-close:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+      background: rgba(229, 173, 82, 0.08);
+    }
+
+    .a11y-modal-close:focus-visible {
+      outline: 3px solid var(--amber) !important;
+      outline-offset: 2px !important;
+    }
+
+    .a11y-modal-desc {
+      font-size: 0.86rem;
+      color: var(--cream-dim);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .a11y-modal-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .a11y-modal-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .a11y-modal-status {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    @media (max-width: 640px) {
+      .a11y-modal-dialog {
+        padding: 20px 16px;
+      }
+      .a11y-modal-grid {
+        grid-template-columns: 1fr;
+      }
+      .a11y-modal-title {
+        font-size: 1.1rem;
+      }
+    }
+
     /* FOOTER ACCESSIBILITY DECK (WCAG 2.2 AAA) */
     /* SKIP LINKS (WCAG 2.4.1) */
     .skip-link {
@@ -3968,6 +4143,83 @@
   <!-- Custom Cursor -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ACCESSIBILITY PREFERENCES MODAL (HEADER POPUP) -->
+  <div class="a11y-modal-backdrop" id="a11yModal" role="dialog" aria-modal="true" aria-labelledby="a11yModalTitle" hidden>
+    <div class="a11y-modal-dialog">
+      <div class="a11y-modal-header">
+        <div class="a11y-modal-header-left">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="a11y-badge-icon" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="7" r="1.5"></circle>
+            <path d="M7 11h10"></path>
+            <path d="M12 11v6"></path>
+            <path d="M9 20l3-3 3 3"></path>
+          </svg>
+          <h2 class="a11y-modal-title" id="a11yModalTitle">Accessibility Preferences</h2>
+          <span class="a11y-chip">WCAG 2.2 AAA</span>
+        </div>
+        <button type="button" class="a11y-modal-close" id="a11yModalClose" aria-label="Close accessibility preferences">&times;</button>
+      </div>
+      <p class="a11y-modal-desc">
+        Adjust display, font sizing, and assistive interaction modes. Preferences apply instantly and persist globally across visits.
+      </p>
+
+      <div class="a11y-controls-grid a11y-modal-grid">
+        <!-- 1. Contrast Toggle -->
+        <div class="a11y-control-card" role="radiogroup" aria-labelledby="modal-label-contrast">
+          <span class="a11y-label" id="modal-label-contrast">Contrast Mode</span>
+          <div class="a11y-btn-group">
+            <button type="button" role="radio" aria-checked="true" class="a11y-btn active" id="modalContrastStd" aria-label="Contrast Mode: Standard AAA (9.9 to 1 ratio)">Standard AAA</button>
+            <button type="button" role="radio" aria-checked="false" class="a11y-btn" id="modalContrastMax" aria-label="Contrast Mode: Maximum High Contrast with enhanced borders">Max Contrast</button>
+          </div>
+        </div>
+
+        <!-- 2. Text Scaling -->
+        <div class="a11y-control-card" role="radiogroup" aria-labelledby="modal-label-scale">
+          <span class="a11y-label" id="modal-label-scale">Text Scale</span>
+          <div class="a11y-btn-group">
+            <button type="button" role="radio" aria-checked="true" class="a11y-btn active" data-scale="100" id="modalScale100" aria-label="Text scale: 100 percent standard size">100%</button>
+            <button type="button" role="radio" aria-checked="false" class="a11y-btn" data-scale="115" id="modalScale115" aria-label="Text scale: 115 percent enlarged">115%</button>
+            <button type="button" role="radio" aria-checked="false" class="a11y-btn" data-scale="130" id="modalScale130" aria-label="Text scale: 130 percent large font">130%</button>
+          </div>
+        </div>
+
+        <!-- 3. Reduced Motion -->
+        <div class="a11y-control-card" role="radiogroup" aria-labelledby="modal-label-motion">
+          <span class="a11y-label" id="modal-label-motion">Motion &amp; Animations</span>
+          <div class="a11y-btn-group">
+            <button type="button" role="radio" aria-checked="true" class="a11y-btn active" id="modalMotionOn" aria-label="Motion: Active smooth animations">Motion On</button>
+            <button type="button" role="radio" aria-checked="false" class="a11y-btn" id="modalMotionReduced" aria-label="Motion: Reduced motion with animations paused">Reduced Motion</button>
+          </div>
+        </div>
+
+        <!-- 4. High-Visibility Focus -->
+        <div class="a11y-control-card" role="radiogroup" aria-labelledby="modal-label-focus">
+          <span class="a11y-label" id="modal-label-focus">Keyboard Focus Rings</span>
+          <div class="a11y-btn-group">
+            <button type="button" role="radio" aria-checked="true" class="a11y-btn active" id="modalFocusStd" aria-label="Keyboard Focus: Standard 2-pixel amber ring">Standard</button>
+            <button type="button" role="radio" aria-checked="false" class="a11y-btn" id="modalFocusHigh" aria-label="Keyboard Focus: High Visibility 4-pixel amber ring">High Visibility</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="a11y-modal-footer">
+        <button type="button" class="a11y-reset-button" id="modalResetAll" aria-label="Reset all accessibility preferences to default">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="1 4 1 10 7 10"></polyline>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+          </svg>
+          <span>Reset Defaults</span>
+        </button>
+        <div class="a11y-status-strip a11y-modal-status">
+          <span class="a11y-status-lead">Active:</span>
+          <span class="a11y-status-tag" id="modalStatusContrast">Standard AAA</span>
+          <span class="a11y-status-tag" id="modalStatusScale">100%</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Full-Screen Editorial Case Study Reader -->
   <div class="reader-overlay" id="caseStudyReader" role="dialog" aria-modal="true" aria-label="Case Study Reader">
@@ -5158,6 +5410,15 @@
   <nav id="mainNav" class="site-nav">
     <a href="index.html" class="nav-logo">Prabhakar <span>Kumar</span></a>
     <div class="nav-mobile-toggle">
+      <button type="button" class="a11y-header-btn" id="a11yHeaderBtnMobile" aria-label="Accessibility preferences (WCAG 2.2 AAA)" aria-haspopup="dialog" aria-expanded="false" title="Accessibility preferences">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="7" r="1.5"></circle>
+          <path d="M7 11h10"></path>
+          <path d="M12 11v6"></path>
+          <path d="M9 20l3-3 3 3"></path>
+        </svg>
+      </button>
       <button type="button" class="theme-toggle" id="themeToggleMobile" aria-label="Toggle dark/light mode">
         <span class="icon-sun" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
         <span class="icon-moon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
@@ -5180,6 +5441,15 @@
         <span class="icon-sun" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
         <span class="icon-moon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
       </button>
+      <button type="button" class="a11y-header-btn" id="a11yHeaderBtn" aria-label="Accessibility preferences (WCAG 2.2 AAA)" aria-haspopup="dialog" aria-expanded="false" title="Accessibility preferences">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="7" r="1.5"></circle>
+          <path d="M7 11h10"></path>
+          <path d="M12 11v6"></path>
+          <path d="M9 20l3-3 3 3"></path>
+        </svg>
+      </button>
       <a href="#contact" class="nav-cta">Let's Talk</a>
     </div>
   </nav>
@@ -5197,7 +5467,8 @@
         <a href="#domains" class="drawer-link"><span class="drawer-num">03</span> Domains</a>
         <a href="#projects" class="drawer-link"><span class="drawer-num">04</span> UX Projects</a>
         <a href="#education" class="drawer-link"><span class="drawer-num">05</span> Academic Roots</a>
-        <a href="resume.html" target="_blank" class="drawer-link"><span class="drawer-num">06</span> View Resume (PDF)</a>
+        <button type="button" class="drawer-link drawer-a11y-link" id="drawerA11yBtn"><span class="drawer-num">06</span> Accessibility Settings (AAA)</button>
+          <a href="resume.html" target="_blank" class="drawer-link"><span class="drawer-num">07</span> View Resume (PDF)</a>
       </div>
       <div class="nav-drawer-footer">
         <a href="#contact" class="drawer-cta">Let's Talk →</a>
@@ -6812,6 +7083,58 @@
         }
       };
 
+      // Modal Open / Close Logic
+      const modal = document.getElementById('a11yModal');
+      const closeBtn = document.getElementById('a11yModalClose');
+      const headerBtn = document.getElementById('a11yHeaderBtn');
+      const headerBtnMobile = document.getElementById('a11yHeaderBtnMobile');
+      const drawerBtn = document.getElementById('drawerA11yBtn');
+      let lastFocused = null;
+
+      const openModal = () => {
+        if (!modal) return;
+        lastFocused = document.activeElement;
+        modal.classList.add('open');
+        modal.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        headerBtn?.setAttribute('aria-expanded', 'true');
+        headerBtnMobile?.setAttribute('aria-expanded', 'true');
+        drawerBtn?.setAttribute('aria-expanded', 'true');
+        closeBtn?.focus();
+      };
+
+      const closeModal = () => {
+        if (!modal) return;
+        modal.classList.remove('open');
+        modal.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        headerBtn?.setAttribute('aria-expanded', 'false');
+        headerBtnMobile?.setAttribute('aria-expanded', 'false');
+        drawerBtn?.setAttribute('aria-expanded', 'false');
+        if (lastFocused && typeof lastFocused.focus === 'function') {
+          lastFocused.focus();
+        }
+      };
+
+      headerBtn?.addEventListener('click', openModal);
+      headerBtnMobile?.addEventListener('click', openModal);
+      drawerBtn?.addEventListener('click', () => {
+        const mobileMenu = document.getElementById('navMobileMenu');
+        mobileMenu?.classList.remove('open');
+        openModal();
+      });
+      closeBtn?.addEventListener('click', closeModal);
+
+      modal?.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal?.classList.contains('open')) {
+          closeModal();
+        }
+      });
+
       const apply = (triggerAnnouncement = false, announceText = '') => {
         // 1. Contrast
         const isMaxContrast = prefs.contrast === 'max';
@@ -6820,17 +7143,23 @@
         } else {
           root.removeAttribute('data-a11y-contrast');
         }
-        const btnContrastStd = document.getElementById('a11yContrastStd');
-        const btnContrastMax = document.getElementById('a11yContrastMax');
-        btnContrastStd?.classList.toggle('active', !isMaxContrast);
-        btnContrastStd?.setAttribute('aria-checked', !isMaxContrast ? 'true' : 'false');
-        btnContrastMax?.classList.toggle('active', isMaxContrast);
-        btnContrastMax?.setAttribute('aria-checked', isMaxContrast ? 'true' : 'false');
 
-        const statusContrast = document.getElementById('statusContrast');
-        if (statusContrast) {
-          statusContrast.textContent = isMaxContrast ? 'Max Contrast (AAA+)' : 'Standard AAA (9.9:1)';
-        }
+        ['a11yContrastStd', 'modalContrastStd'].forEach(id => {
+          const btn = document.getElementById(id);
+          btn?.classList.toggle('active', !isMaxContrast);
+          btn?.setAttribute('aria-checked', !isMaxContrast ? 'true' : 'false');
+        });
+        ['a11yContrastMax', 'modalContrastMax'].forEach(id => {
+          const btn = document.getElementById(id);
+          btn?.classList.toggle('active', isMaxContrast);
+          btn?.setAttribute('aria-checked', isMaxContrast ? 'true' : 'false');
+        });
+
+        const statusContrastText = isMaxContrast ? 'Max Contrast (AAA+)' : 'Standard AAA (9.9:1)';
+        const elStatus1 = document.getElementById('statusContrast');
+        const elStatus2 = document.getElementById('modalStatusContrast');
+        if (elStatus1) elStatus1.textContent = statusContrastText;
+        if (elStatus2) elStatus2.textContent = isMaxContrast ? 'Max Contrast' : 'Standard AAA';
 
         // 2. Scale
         if (prefs.scale === '115') {
@@ -6841,17 +7170,17 @@
           root.removeAttribute('data-a11y-scale');
         }
         ['100', '115', '130'].forEach(s => {
-          const btn = document.getElementById('a11yScale' + s);
-          if (btn) {
-            const isActive = prefs.scale === s;
-            btn.classList.toggle('active', isActive);
-            btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
-          }
+          const isActive = prefs.scale === s;
+          ['a11yScale' + s, 'modalScale' + s].forEach(id => {
+            const btn = document.getElementById(id);
+            btn?.classList.toggle('active', isActive);
+            btn?.setAttribute('aria-checked', isActive ? 'true' : 'false');
+          });
         });
-        const statusScale = document.getElementById('statusScale');
-        if (statusScale) {
-          statusScale.textContent = prefs.scale + '% Scale';
-        }
+        const elScale1 = document.getElementById('statusScale');
+        const elScale2 = document.getElementById('modalStatusScale');
+        if (elScale1) elScale1.textContent = prefs.scale + '% Scale';
+        if (elScale2) elScale2.textContent = prefs.scale + '% Scale';
 
         // 3. Motion
         const isReducedMotion = prefs.motion === 'reduced';
@@ -6860,17 +7189,18 @@
         } else {
           root.removeAttribute('data-a11y-motion');
         }
-        const btnMotionOn = document.getElementById('a11yMotionOn');
-        const btnMotionReduced = document.getElementById('a11yMotionReduced');
-        btnMotionOn?.classList.toggle('active', !isReducedMotion);
-        btnMotionOn?.setAttribute('aria-checked', !isReducedMotion ? 'true' : 'false');
-        btnMotionReduced?.classList.toggle('active', isReducedMotion);
-        btnMotionReduced?.setAttribute('aria-checked', isReducedMotion ? 'true' : 'false');
-
-        const statusMotion = document.getElementById('statusMotion');
-        if (statusMotion) {
-          statusMotion.textContent = isReducedMotion ? 'Reduced Motion (Paused)' : 'Motion Active';
-        }
+        ['a11yMotionOn', 'modalMotionOn'].forEach(id => {
+          const btn = document.getElementById(id);
+          btn?.classList.toggle('active', !isReducedMotion);
+          btn?.setAttribute('aria-checked', !isReducedMotion ? 'true' : 'false');
+        });
+        ['a11yMotionReduced', 'modalMotionReduced'].forEach(id => {
+          const btn = document.getElementById(id);
+          btn?.classList.toggle('active', isReducedMotion);
+          btn?.setAttribute('aria-checked', isReducedMotion ? 'true' : 'false');
+        });
+        const elMotion = document.getElementById('statusMotion');
+        if (elMotion) elMotion.textContent = isReducedMotion ? 'Reduced Motion (Paused)' : 'Motion Active';
 
         // 4. Focus
         const isHighFocus = prefs.focus === 'high';
@@ -6879,74 +7209,81 @@
         } else {
           root.removeAttribute('data-a11y-focus');
         }
-        const btnFocusStd = document.getElementById('a11yFocusStd');
-        const btnFocusHigh = document.getElementById('a11yFocusHigh');
-        btnFocusStd?.classList.toggle('active', !isHighFocus);
-        btnFocusStd?.setAttribute('aria-checked', !isHighFocus ? 'true' : 'false');
-        btnFocusHigh?.classList.toggle('active', isHighFocus);
-        btnFocusHigh?.setAttribute('aria-checked', isHighFocus ? 'true' : 'false');
-
-        const statusFocus = document.getElementById('statusFocus');
-        if (statusFocus) {
-          statusFocus.textContent = isHighFocus ? 'High-Vis Focus (4px)' : 'Standard Focus (2px)';
-        }
+        ['a11yFocusStd', 'modalFocusStd'].forEach(id => {
+          const btn = document.getElementById(id);
+          btn?.classList.toggle('active', !isHighFocus);
+          btn?.setAttribute('aria-checked', !isHighFocus ? 'true' : 'false');
+        });
+        ['a11yFocusHigh', 'modalFocusHigh'].forEach(id => {
+          const btn = document.getElementById(id);
+          btn?.classList.toggle('active', isHighFocus);
+          btn?.setAttribute('aria-checked', isHighFocus ? 'true' : 'false');
+        });
+        const elFocus = document.getElementById('statusFocus');
+        if (elFocus) elFocus.textContent = isHighFocus ? 'High-Vis Focus (4px)' : 'Standard Focus (2px)';
 
         if (triggerAnnouncement && announceText) {
           announceA11y(announceText);
         }
       };
 
-      // Event Listeners
-      document.getElementById('a11yContrastStd')?.addEventListener('click', () => {
+      // Event Listeners for both Footer Deck and Header Modal
+      const bindClick = (ids, handler) => {
+        ids.forEach(id => {
+          document.getElementById(id)?.addEventListener('click', handler);
+        });
+      };
+
+      bindClick(['a11yContrastStd', 'modalContrastStd'], () => {
         prefs.contrast = 'std';
         save();
         apply(true, 'Contrast profile set to Standard AAA (9.9 to 1 ratio).');
       });
-      document.getElementById('a11yContrastMax')?.addEventListener('click', () => {
+      bindClick(['a11yContrastMax', 'modalContrastMax'], () => {
         prefs.contrast = 'max';
         save();
         apply(true, 'Maximum high contrast profile enabled. Borders and solid contrast enhanced.');
       });
 
-      document.getElementById('a11yScale100')?.addEventListener('click', () => {
+      bindClick(['a11yScale100', 'modalScale100'], () => {
         prefs.scale = '100';
         save();
         apply(true, 'Text scale set to 100 percent standard size.');
       });
-      document.getElementById('a11yScale115')?.addEventListener('click', () => {
+      bindClick(['a11yScale115', 'modalScale115'], () => {
         prefs.scale = '115';
         save();
         apply(true, 'Text scale increased to 115 percent.');
       });
-      document.getElementById('a11yScale130')?.addEventListener('click', () => {
+      bindClick(['a11yScale130', 'modalScale130'], () => {
         prefs.scale = '130';
         save();
         apply(true, 'Text scale increased to 130 percent large font.');
       });
 
-      document.getElementById('a11yMotionOn')?.addEventListener('click', () => {
+      bindClick(['a11yMotionOn', 'modalMotionOn'], () => {
         prefs.motion = 'active';
         save();
         apply(true, 'Motion effects and smooth transitions enabled.');
       });
-      document.getElementById('a11yMotionReduced')?.addEventListener('click', () => {
+      bindClick(['a11yMotionReduced', 'modalMotionReduced'], () => {
         prefs.motion = 'reduced';
         save();
         apply(true, 'Reduced motion mode enabled. Background and interaction animations paused.');
       });
 
-      document.getElementById('a11yFocusStd')?.addEventListener('click', () => {
+      bindClick(['a11yFocusStd', 'modalFocusStd'], () => {
         prefs.focus = 'std';
         save();
         apply(true, 'Standard keyboard focus rings active (2-pixel outline).');
       });
-      document.getElementById('a11yFocusHigh')?.addEventListener('click', () => {
+      bindClick(['a11yFocusHigh', 'modalFocusHigh'], () => {
         prefs.focus = 'high';
         save();
         apply(true, 'High-visibility keyboard focus rings active (4-pixel high-contrast outline).');
       });
 
-      document.getElementById('a11yResetAll')?.addEventListener('click', () => {
+      bindClick(['a11yResetAll', 'modalResetAll'], () => {
         prefs = { contrast: 'std', scale: '100', motion: 'active', focus: 'std' };
         save();
         apply(true, 'All accessibility preferences have been reset to default values.');
