@@ -1,0 +1,27 @@
+{
+  "name": "Prabhakar Kumar — Lead UX / Product Designer",
+  "short_name": "Prabhakar UX",
+  "description": "Lead Product & UX Designer (12+ Yrs · IIT Delhi M.Des). Enterprise SaaS platforms & complex data systems.",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/og-square.png",
+      "sizes": "600x600",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#09090b",
+  "background_color": "#09090b",
+  "display": "standalone",
+  "start_url": "/"
+}

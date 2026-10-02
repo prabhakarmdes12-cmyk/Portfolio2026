@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://portfolio2026-ruby.vercel.app/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://portfolio2026-ruby.vercel.app/og-image.jpg</image:loc>
+      <image:title>Prabhakar Kumar — Lead UX / Product Designer Portfolio</image:title>
+      <image:caption>Lead Product &amp; UX Designer (12+ Yrs · IIT Delhi M.Des). Enterprise SaaS platforms &amp; complex data systems.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://portfolio2026-ruby.vercel.app/resume.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

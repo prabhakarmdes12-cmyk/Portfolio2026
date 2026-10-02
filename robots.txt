@@ -1,0 +1,8 @@
+# robots.txt for Prabhakar Kumar Portfolio
+User-agent: *
+Allow: /
+Disallow: /scratch/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://portfolio2026-ruby.vercel.app/sitemap.xml
